@@ -134,7 +134,7 @@ public class LoginController implements Initializable {
 
     private ArrayList<String> getDataOrderClient() throws SQLException {
         ArrayList<String> data = new ArrayList<>();
-        String query = "select product.name,type_product.name,`order`.`number_order` from type_product,product,`order`, client, order_has_product where client.idClient = `order`.`client_idclient` and `order`.idorder = order_has_product.order_idorder and product.idProduct = order_has_product.product_idProduct and client.login = '"+LoginController.login+"' and product.type_product_idtype_product = type_product.idtype_product;";
+        String query = "select product.name,type_product.name,`order`.`number_order` from type_product,product,`order`, client, order_has_product where client.idClient = `order`.`client_idclient` and `order`.idorder = order_has_product.order_idorder and product.idProduct = order_has_product.product_idProduct and client.login = '"+LoginController.login+"' and product.type_product_idtype_product = type_product.idtype_product order by `order`.`number_order` ASC" ;
         ResultSet resultSet = DBConnector.executeQuery(query);
         while (resultSet.next()){
             if(!resultSet.getString(1).isEmpty()) {

@@ -1,14 +1,14 @@
 package com.example.kurs;
 
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.effect.Light;
 import javafx.scene.effect.Lighting;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.RowConstraints;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -37,35 +37,17 @@ public class ProductCard{
         GridPane gridPane = new GridPane();
         gridPane.setId(String.valueOf(idCard));
         Label name = new Label(nameProduct);
+        name.setAlignment(Pos.CENTER);
         Label price = new Label(priceProduct);
+        price.setAlignment(Pos.CENTER);
         Label type = new Label(typeProduct);
+        type.setAlignment(Pos.CENTER);
         gridPane.add(name,0,0);
         gridPane.add(price,0,1);
         gridPane.add(type,0,2);
 
-        int countcolumn = 1;
-        ColumnConstraints column = new ColumnConstraints();
-        column.setPercentWidth((1.0f/((float) countcolumn))*100.0f);
-        for (int i = 1; i <= countcolumn; i++) {
-            gridPane.getColumnConstraints().add(column);
-        }
-        int countRows = 3;
-        RowConstraints line = new RowConstraints();
-        line.setPercentHeight((1.0f/((float) countRows))*100.0f);
-        for (int i = 1; i <= countRows; i++) {
-            gridPane.getRowConstraints().add(line);
-        }
-        gridPane.setGridLinesVisible(true);
-        gridPane.setHgap(10);
-        gridPane.setVgap(10);
-        Light.Distant light = new Light.Distant();
-        light.setAzimuth(-135.0);
-
-        Lighting lighting = new Lighting();
-        lighting.setLight(light);
-        lighting.setSurfaceScale(5.0);
-
-        gridPane.setEffect(lighting);
+        gridPane.setBorder(Border.stroke(Color.color(0,0,0)));
+        gridPane.setPrefSize(140,55);
         gridPane.setLayoutX(x);
         gridPane.setLayoutY(y);
 

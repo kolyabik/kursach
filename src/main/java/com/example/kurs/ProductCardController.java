@@ -3,14 +3,11 @@ package com.example.kurs;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -60,13 +57,13 @@ public class ProductCardController implements Initializable {
             Scene scene = HelloApplication.stage.getScene();
 
             double x = scene.getWindow().getX() / 4;
-            double y = scene.getWindow().getY() / 3 + 80;
+            double y = scene.getWindow().getY() / 3;
             int col = 0;
             int rows = 2;
-            int rowSpace = 50;
+            int rowSpace = 80;
             for (int i = 0; i < products.size(); i++) {
                 if (i == 1) x += 10;
-                if (rows > 0) y = scene.getWindow().getY() / 3 + 80 - rowSpace;
+                if (rows > 0) y = scene.getWindow().getY() / 3+80 - rowSpace;
                 if ((i % 4 == 0)) {
                     col = 0;
                 } else if (i != 0) {
@@ -131,7 +128,7 @@ public class ProductCardController implements Initializable {
 
     private ArrayList<Integer> getIdProductFind() throws SQLException {
         ArrayList<Integer> arrayList = new ArrayList<>();
-        String query = "select product.idProduct from product,type_product where product.type_product_idtype_product = type_product.idtype_product and product.name like '" + findField.getText() + "%'";
+        String query = "select product.idProduct from product,type_product where product.type_product_idtype_product = type_product.idtype_product and product.name like '%" + findField.getText() + "%'";
         ResultSet resultSet = DBConnector.executeQuery(query);
         while (resultSet.next()) {
             arrayList.add(resultSet.getInt(1));
@@ -143,7 +140,7 @@ public class ProductCardController implements Initializable {
 
     private ArrayList<String> getProductInformationFind() throws SQLException {
         ArrayList<String> arrayList = new ArrayList<>();
-        String query = "select product.name,product.price,type_product.name from product,type_product where product.type_product_idtype_product = type_product.idtype_product and product.name like '" + findField.getText() + "%'";
+        String query = "select product.name,product.price,type_product.name from product,type_product where product.type_product_idtype_product = type_product.idtype_product and product.name like '%" + findField.getText() + "%'";
         ResultSet resultSet = DBConnector.executeQuery(query);
         while (resultSet.next()) {
             arrayList.add(resultSet.getString(1));
