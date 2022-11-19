@@ -12,5 +12,9 @@
       <Label fx:id="amountProduct" alignment="CENTER" layoutX="450.0" layoutY="260.0" text="amount" />
       <Button layoutX="115.0" layoutY="330.0" mnemonicParsing="false" onAction="#toProductCard" text="Назад" />
       <Button alignment="CENTER" layoutX="421.0" layoutY="330.0" mnemonicParsing="false" onAction="#toOrderProduct" text="Заказать Товар" />
+      <Label fx:id="nameProduct1" alignment="CENTER" layoutX="87.0" layoutY="97.0" text="Название продукта" />
+      <Label fx:id="typeProduct1" alignment="CENTER" layoutX="434.0" layoutY="97.0" text="Тип продукта" />
+      <Label fx:id="priceProduct1" alignment="CENTER" layoutX="125.0" layoutY="232.0" text="Цена " />
+      <Label fx:id="amountProduct1" alignment="CENTER" layoutX="410.0" layoutY="232.0" text="Количество на складе" />
    </children>
 </AnchorPane>

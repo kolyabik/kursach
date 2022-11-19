@@ -9,19 +9,19 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kurs.LoginController">
    <children>
-      <Label fx:id="FIO" layoutX="110.0" layoutY="96.0" text="FIO">
+      <Label fx:id="FIO" alignment="CENTER" layoutX="70.0" layoutY="96.0" text="FIO">
          <font>
             <Font size="15.0" />
          </font></Label>
-      <Label fx:id="Email" layoutX="283.0" layoutY="96.0" text="E-mail">
+      <Label fx:id="Email" alignment="CENTER" layoutX="313.0" layoutY="96.0" text="E-mail">
          <font>
             <Font size="15.0" />
          </font></Label>
-      <Label fx:id="phoneNumber" layoutX="442.0" layoutY="96.0" text="phone number">
+      <Label fx:id="phoneNumber" alignment="CENTER" layoutX="473.0" layoutY="96.0" text="phone number">
          <font>
             <Font size="15.0" />
          </font></Label>
-      <Button layoutX="81.0" layoutY="283.0" mnemonicParsing="false" onAction="#onProductButtonClick" text="to products" />
+      <Button layoutX="81.0" layoutY="283.0" mnemonicParsing="false" onAction="#onProductButtonClick" text="К продуктам" />
       <Label layoutX="377.0" layoutY="146.0" text="Мои заказы">
          <font>
             <Font size="15.0" />
@@ -34,5 +34,8 @@
             <TableColumn fx:id="typeProductColomn" prefWidth="149.0" text="Тип продукта" />
         </columns>
       </TableView>
+      <Label layoutX="68.0" layoutY="70.0" text="ФИО" />
+      <Label layoutX="281.0" layoutY="70.0" text="Электронная почта" />
+      <Label layoutX="477.0" layoutY="70.0" text="номер телефона" />
    </children>
 </AnchorPane>
